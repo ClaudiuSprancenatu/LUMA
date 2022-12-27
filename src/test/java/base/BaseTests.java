@@ -11,14 +11,14 @@ public class BaseTests {
     private WebDriver driver;
 @BeforeMethod
     public void SetUp() {
-        System.setProperty("baseUrl", "https://magento2.algolia.com/");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.navigate().to("https://magento2.algolia.com/");
     }
-@AfterMethod
-    public void TearDown() {
-        driver.quit();
-    }
+//@AfterMethod
+//    public void TearDown() {
+//        driver.quit();
+//    }
 
 }
