@@ -9,6 +9,4 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
-
-    private String baseUrl = System.getProperty("baseUrl", "System baseUrl is not defined");
 }
