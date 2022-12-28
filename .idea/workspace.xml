@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edcb3a69-891d-4338-a9ae-eef6c6348980" name="Changes" comment="LUMA - Setup the project" />
+    <list default="true" id="edcb3a69-891d-4338-a9ae-eef6c6348980" name="Changes" comment="LUMA - Setup the project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LumaTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LumaTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LumaTests.testLuma" />
         <item itemvalue="TestNG.LumaTests.testLuma" />
       </list>
     </recent_temporary>
