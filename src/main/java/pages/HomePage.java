@@ -14,14 +14,6 @@ public class HomePage {
         browser.iClickOnLoginIn();
     }
 
-    public void iCanSeeLogInPage() {
-        browser.iCanSeeLogInPage();
-    }
-
-    public void iLoginIn(String email, String password) {
-        browser.iLoginIn(email, password);
-    }
-
     public void iCheckTheSuccessLogin() {
         browser.iCheckTheSuccessLogin();
     }

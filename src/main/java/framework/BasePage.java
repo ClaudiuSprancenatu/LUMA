@@ -41,8 +41,7 @@ public class BasePage {
     public void iCheckTheSuccessLogin() {
         waitUntilTheElementIsVisible(By.xpath("//span[@class='logged-in'][1]"));
         String welcome = driver.findElement(By.xpath("//span[@class='logged-in'][1]")).getText();
-        // #TODO The verification will be done when the MyAccount page will be done
-//        welcome.contains(String.format(HOME_PAGE_WELCOME));
+        welcome.contains("Welcome, Sprancenatu Claudiu!");
     }
 
     public void waitUntilTheElementIsVisible(By locator) {
