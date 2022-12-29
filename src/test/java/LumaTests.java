@@ -15,6 +15,9 @@ public class LumaTests extends BaseTests {
 
     @Test
     public void testLuma() {
-
+        homePage.iClickOnLoginIn();
+        homePage.iCanSeeLogInPage();
+        homePage.iLoginIn("sprancenatuc@yahoo.com", "tobatama94C!");
+        homePage.iCheckTheSuccessLogin();
     }
 }
