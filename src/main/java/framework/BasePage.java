@@ -15,8 +15,8 @@ public class BasePage {
         this.driver = driver;
     }
 
-    public void iClickOnLoginIn() {
-        driver.findElement(new By.ByLinkText("Sign In")).click();
+    public void iClickOn(String text) {
+        driver.findElement(new By.ByLinkText(text)).click();
     }
 
     public void iCanSeeLogInPage() {
@@ -47,5 +47,43 @@ public class BasePage {
     public void waitUntilTheElementIsVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public void iClickOnDropDowMenu() {
+        waitUntilTheElementIsVisible(By.xpath("//button[@class='action switch']"));
+        driver.findElement(By.xpath("//button[@class='action switch']")).click();
+    }
+
+    public void iCanSeeMyAccountPage() {
+        String titleMyAcountPage = driver.findElement(By.xpath("//span[@class='base']")).getText();
+        titleMyAcountPage.contains(MY_ACCOUNT_TITLE);
+        String titleFirstSection = driver.findElement(By.xpath("//div[@class='block block-dashboard-info']" +
+                "/div[@class='block-title']/strong[1]")).getText();
+        titleFirstSection.contains(MY_ACCOUNT_TITLE_FIRST_SECTION);
+        String titleFirstSubsection = driver.findElement(By.xpath("//div[@class='box box-information']" +
+                "/strong[@class='box-title']/span")).getText();
+        titleFirstSubsection.contains(MY_ACCOUNT_TITLE_FIRST_SUBSECTION);
+        String subsectionOne = driver.findElement(By.xpath("//div[@class='box box-information']" +
+                "/div[@class='box-content']")).getText();
+        subsectionOne.contains(MY_ACCOUNT_FIRST_SUBSECTION_1);
+        String titleSecondSubsection = driver.findElement(By.xpath("//div[@class='box box-newsletter']" +
+                "/strong")).getText();
+        titleSecondSubsection.contains(MY_ACCOUNT_TITLE_SECOND_SUBSECTION);
+        String subsectionTwo = driver.findElement(By.xpath("//div[@class='box box-newsletter']/div[1]")).getText();
+        subsectionTwo.contains(MY_ACCOUNT_SECOND_SUBSECTION);
+        String titleSecondSection = driver.findElement(By.xpath("//div[@class='block block-" +
+                "dashboard-addresses']/div/strong")).getText();
+        titleSecondSection.contains(MY_ACCOUNT_TITLE_SECOND_SECTION);
+        String titleFirstSectionOne = driver.findElement(By.xpath("//div[@class='box box-billing-address']/strong")).getText();
+        titleFirstSectionOne.contains(MY_ACCOUNT_TITLE_FIRST_SUBSECTION_1);
+        String secondSubsectionOne = driver.findElement(By.xpath("//div[@class='box box-billing-address']" +
+                "/div[@class='box-content']/address")).getText();
+        secondSubsectionOne.contains(MY_ACCOUNT_SECOND_SUBSECTION_1);
+        String titleAccountSubesctionTwo = driver.findElement(By.xpath("//div[@class='box box-shipping-" +
+                "address']/div[1]")).getText();
+        titleAccountSubesctionTwo.contains(MY_ACCOUNT_SECOND_SUBSECTION_2);
+        String secondSubectionTwo = driver.findElement(By.xpath("//div[@class='box box-shipping-address']" +
+                "/strong")).getText();
+        secondSubectionTwo.contains(MY_ACCOUNT_TITLE_SECOND_SUBSECTION_2);
     }
 }

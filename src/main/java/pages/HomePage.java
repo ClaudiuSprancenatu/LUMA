@@ -10,12 +10,20 @@ public class HomePage {
         this.browser = browser;
     }
 
-    public void iClickOnLoginIn() {
-        browser.iClickOnLoginIn();
+    public void iClickOn(String text) {
+        browser.iClickOn(text);
     }
 
     public void iCheckTheSuccessLogin() {
         browser.iCheckTheSuccessLogin();
+    }
+
+    public void iClickOnAccountPage(String text) {
+        browser.iClickOn(text);
+    }
+
+    public void iClickOnDropDowMenu() {
+        browser.iClickOnDropDowMenu();
     }
 
 }

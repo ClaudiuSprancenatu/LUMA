@@ -8,6 +8,8 @@ public class PageObjectManager {
     private HomePage homePage;
     private LoginPage loginPage;
 
+    private MyAccountPage myAccountPage;
+
     public PageObjectManager(WebDriver driver) {
         basePage = new BasePage(driver);
     }
@@ -18,5 +20,8 @@ public class PageObjectManager {
 
     public LoginPage getLoginPage() {
         return (loginPage == null) ? loginPage = new LoginPage(basePage) : loginPage;
+    }
+    public MyAccountPage getMyAccountPage() {
+        return (myAccountPage == null) ? myAccountPage = new MyAccountPage(basePage) : myAccountPage;
     }
 }
