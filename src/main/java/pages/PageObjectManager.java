@@ -7,8 +7,8 @@ public class PageObjectManager {
     private BasePage basePage;
     private HomePage homePage;
     private LoginPage loginPage;
-
     private MyAccountPage myAccountPage;
+    private TeesPage teesPage;
 
     public PageObjectManager(WebDriver driver) {
         basePage = new BasePage(driver);
@@ -23,5 +23,9 @@ public class PageObjectManager {
     }
     public MyAccountPage getMyAccountPage() {
         return (myAccountPage == null) ? myAccountPage = new MyAccountPage(basePage) : myAccountPage;
+    }
+
+    public TeesPage getTeesPage() {
+        return (teesPage == null) ? teesPage = new TeesPage(basePage) : teesPage;
     }
 }

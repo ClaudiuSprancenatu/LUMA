@@ -22,4 +22,5 @@ public class FrontendConstants {
     public static final String MY_ACCOUNT_TITLE_SECOND_SUBSECTION_2 = "Default Shipping Address";
     public static final String MY_ACCOUNT_SECOND_SUBSECTION_2 = "\n" +
             "                    You have not set a default shipping address.                ";
+    public static final String TITLE_TEES_PAGE = "Tees";
 }

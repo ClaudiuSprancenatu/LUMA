@@ -2,8 +2,14 @@ package framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import static constants.FrontendConstants.*;
 
@@ -16,6 +22,7 @@ public class BasePage {
     }
 
     public void iClickOn(String text) {
+        waitUntilTheElementIsVisible(new By.ByLinkText(text));
         driver.findElement(new By.ByLinkText(text)).click();
     }
 
@@ -49,12 +56,17 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    public void iClickOnButton(String xpathLocator) {
+        waitUntilTheElementIsVisible(By.xpath(xpathLocator));
+        driver.findElement(By.xpath(xpathLocator)).click();
+    }
+
     public void iClickOnDropDowMenu() {
-        waitUntilTheElementIsVisible(By.xpath("//button[@class='action switch']"));
-        driver.findElement(By.xpath("//button[@class='action switch']")).click();
+        iClickOnButton("//button[contains(@class, 'action')]");
     }
 
     public void iCanSeeMyAccountPage() {
+        waitUntilTheElementIsVisible(By.xpath("//span[@class='base']"));
         String titleMyAcountPage = driver.findElement(By.xpath("//span[@class='base']")).getText();
         titleMyAcountPage.contains(MY_ACCOUNT_TITLE);
         String titleFirstSection = driver.findElement(By.xpath("//div[@class='block block-dashboard-info']" +
@@ -86,4 +98,48 @@ public class BasePage {
                 "/strong")).getText();
         secondSubectionTwo.contains(MY_ACCOUNT_TITLE_SECOND_SUBSECTION_2);
     }
+
+    public void iNavigateViaMenu(String movePointerTo, String movePointerToCategory, String movePointerToProduct) {
+        WebElement moveThePointerToMen = driver.findElement(new By.ByLinkText(movePointerTo));
+        iHoverOverElement(moveThePointerToMen);
+        waitUntilTheElementIsVisible(new By.ByLinkText(movePointerToCategory));
+        WebElement moveThePointerToTops = driver.findElement(new By.ByLinkText(movePointerToCategory));
+        iHoverOverElement(moveThePointerToTops);
+        waitUntilTheElementIsVisible(new By.ByLinkText(movePointerToProduct));
+        WebElement moveThePointerToTees = driver.findElement(new By.ByLinkText(movePointerToProduct));
+        iHoverOverElement(moveThePointerToTees);
+        moveThePointerToTees.click();
+    }
+
+    public void iHoverOverElement(WebElement locator) {
+        Actions action = new Actions(driver);
+        action.moveToElement(locator).perform();
+    }
+
+    public void iCanSeeTeesPage() {
+        String titleTeesPage = driver.findElement(By.xpath("//span[@class='base']")).getText();
+        titleTeesPage.contains(TITLE_TEES_PAGE);
+    }
+
+    public void iChooseTheColor(String color) {
+        iClickOnButton("//input[@value='" + color + "']");
+    }
+
+    public void iAddToCart(Integer howManyProductsYouWantToAdd) {
+        List<WebElement> elements = driver.findElements(By.xpath("//button[contains(@data-indexname, 'magento')]"));
+        int sizeElements = elements.size();
+        List<Integer> addElements = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < sizeElements; i++) {
+            int int_random = random.nextInt(sizeElements);
+            if (!addElements.contains(int_random) || addElements.equals(int_random)) {
+                elements.get(int_random).click();
+                addElements.add(int_random);
+            }
+            if (addElements.size() == howManyProductsYouWantToAdd) {
+                break;
+            }
+        }
+    }
+
 }

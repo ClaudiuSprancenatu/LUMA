@@ -20,9 +20,9 @@ public class BaseTests {
         driver.navigate().to("https://magento2.algolia.com/");
         pages = new PageObjectManager(driver);
     }
-@AfterMethod
-    public void TearDown() {
-        driver.quit();
-    }
+//@AfterMethod
+//    public void TearDown() {
+//        driver.quit();
+//    }
 
 }

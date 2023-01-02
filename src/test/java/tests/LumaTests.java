@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAccountPage;
+import pages.TeesPage;
 
 
 public class LumaTests extends BaseTests {
@@ -13,12 +14,14 @@ public class LumaTests extends BaseTests {
     private HomePage homePage;
     private LoginPage loginPage;
     private MyAccountPage myAccountPage;
+    private TeesPage teesPage;
 
     @BeforeMethod
     public void setPages() {
         homePage = pages.getHomePage();
         loginPage = pages.getLoginPage();
         myAccountPage = pages.getMyAccountPage();
+        teesPage = pages.getTeesPage();
     }
 
     @Test
@@ -30,5 +33,9 @@ public class LumaTests extends BaseTests {
         homePage.iClickOnDropDowMenu();
         homePage.iClickOnAccountPage("My Account");
         myAccountPage.iCanSeeMyAccountPage();
+        homePage.iNavigateViaMenu("Men", "Tops", "Tees");
+        teesPage.iCanSeeTeesPage();
+        teesPage.iChooseTheColor("Black");
+        teesPage.iAddToCart(5);
     }
 }

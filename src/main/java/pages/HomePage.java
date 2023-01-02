@@ -26,4 +26,8 @@ public class HomePage {
         browser.iClickOnDropDowMenu();
     }
 
+    public void iNavigateViaMenu(String movePointerTo, String movePointerToCategory, String movePointerToProduct) {
+        browser.iNavigateViaMenu(movePointerTo, movePointerToCategory, movePointerToProduct);
+    }
+
 }
