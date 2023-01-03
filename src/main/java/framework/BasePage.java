@@ -125,21 +125,11 @@ public class BasePage {
         iClickOnButton("//input[@value='" + color + "']");
     }
 
-    public void iAddToCart(Integer howManyProductsYouWantToAdd) {
+    public void iAddToCart() {
         List<WebElement> elements = driver.findElements(By.xpath("//button[contains(@data-indexname, 'magento')]"));
         int sizeElements = elements.size();
-        List<Integer> addElements = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < sizeElements; i++) {
-            int int_random = random.nextInt(sizeElements);
-            if (!addElements.contains(int_random) || addElements.equals(int_random)) {
-                elements.get(int_random).click();
-                addElements.add(int_random);
-            }
-            if (addElements.size() == howManyProductsYouWantToAdd) {
-                break;
-            }
-        }
+        int int_random = random.nextInt(sizeElements);
+        elements.get(int_random).click();
     }
-
 }

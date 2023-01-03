@@ -18,7 +18,7 @@ public class TeesPage {
         browser.iChooseTheColor(color);
     }
 
-    public void iAddToCart(Integer howManyProductsYouWantToAdd) {
-        browser.iAddToCart(howManyProductsYouWantToAdd);
+    public void iAddToCart() {
+        browser.iAddToCart();
     }
 }

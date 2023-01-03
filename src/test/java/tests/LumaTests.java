@@ -36,6 +36,6 @@ public class LumaTests extends BaseTests {
         homePage.iNavigateViaMenu("Men", "Tops", "Tees");
         teesPage.iCanSeeTeesPage();
         teesPage.iChooseTheColor("Black");
-        teesPage.iAddToCart(5);
+        teesPage.iAddToCart();
     }
 }
