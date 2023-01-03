@@ -14,11 +14,11 @@ public class TeesPage {
         browser.iCanSeeTeesPage();
     }
 
-    public void iChooseTheColor(String color) {
-        browser.iChooseTheColor(color);
+    public void iChooseTheColorFromFilter(String color) {
+        browser.iChooseTheColorFromFilter(color);
     }
 
-    public void iAddToCart() {
-        browser.iAddToCart();
+    public void iChooseAProduct() {
+        browser.iChooseAProduct();
     }
 }

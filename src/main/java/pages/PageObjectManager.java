@@ -10,6 +10,8 @@ public class PageObjectManager {
     private MyAccountPage myAccountPage;
     private TeesPage teesPage;
 
+    private ProductPage productPage;
+
     public PageObjectManager(WebDriver driver) {
         basePage = new BasePage(driver);
     }
@@ -27,5 +29,8 @@ public class PageObjectManager {
 
     public TeesPage getTeesPage() {
         return (teesPage == null) ? teesPage = new TeesPage(basePage) : teesPage;
+    }
+    public ProductPage getProductPage () {
+        return (productPage == null) ? productPage = new ProductPage(basePage) : productPage;
     }
 }

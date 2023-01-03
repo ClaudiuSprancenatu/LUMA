@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edcb3a69-891d-4338-a9ae-eef6c6348980" name="Changes" comment="LUMA - Added products into cart" />
+    <list default="true" id="edcb3a69-891d-4338-a9ae-eef6c6348980" name="Changes" comment="LUMA - Added products into cart">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/PageObjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/PageObjectManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/TeesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/TeesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LumaTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LumaTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +27,20 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MyAccountPage" />
+        <entry key="$PROJECT_DIR$" value="Claudiu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2JVukJmrpBkFdqZIdoCX5dzCNmV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -38,7 +52,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -166,7 +180,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672763275064</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="LUMA - Added products into cart">
+      <created>1672764138022</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672764138022</updated>
+    </task>
+    <task id="LOCAL-00012" summary="LUMA - Added products into cart">
+      <created>1672764888467</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672764888467</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -21,6 +21,56 @@ public class BasePage {
         this.driver = driver;
     }
 
+    By sizeXS = By.id("option-label-size-144-item-166");
+    By sizeS = By.id("option-label-size-144-item-167");
+    By sizeM = By.id("option-label-size-144-item-168");
+    By sizeL = By.id("option-label-size-144-item-169");
+    By sizeXL = By.id("option-label-size-144-item-170");
+    By colorBlack = By.id("option-label-color-93-item-49");
+    By colorBlue = By.id("option-label-color-93-item-50");
+    By colorRed = By.id("option-label-color-93-item-58");
+
+    By addToCartButton = By.xpath("//button[@id='product-addtocart-button']");
+
+    public void chooseTheSize(String size) {
+
+        switch (size) {
+            case "XS":
+                driver.findElement(By.id(String.valueOf(sizeXS))).click();
+                break;
+            case "S":
+                driver.findElement(By.id(String.valueOf(sizeS))).click();
+                break;
+            case "M":
+                driver.findElement(By.id(String.valueOf(sizeM))).click();
+                break;
+            case "L":
+                driver.findElement(By.id(String.valueOf(sizeL))).click();
+                break;
+            case "XL":
+                driver.findElement(By.id(String.valueOf(sizeXL))).click();
+                break;
+            default:
+                System.out.println("You have to choose between: XS, S, M, L, XL");
+        }
+    }
+
+    public void chooseTheColor(String color) {
+        switch (color) {
+            case "Black":
+                driver.findElement(By.id(String.valueOf(colorBlack))).click();
+                break;
+            case "Blue":
+                driver.findElement(By.id(String.valueOf(colorBlue))).click();
+                break;
+            case "Red":
+                driver.findElement(By.id(String.valueOf(colorRed))).click();
+                break;
+            default:
+                System.out.println("You have to choose between: Black, Blue, Red");
+        }
+    }
+
     public void iClickOn(String text) {
         waitUntilTheElementIsVisible(new By.ByLinkText(text));
         driver.findElement(new By.ByLinkText(text)).click();
@@ -121,15 +171,27 @@ public class BasePage {
         titleTeesPage.contains(TITLE_TEES_PAGE);
     }
 
-    public void iChooseTheColor(String color) {
+    public void iChooseTheColorFromFilter(String color) {
         iClickOnButton("//input[@value='" + color + "']");
     }
 
-    public void iAddToCart() {
+    public void iChooseAProduct() {
         List<WebElement> elements = driver.findElements(By.xpath("//button[contains(@data-indexname, 'magento')]"));
         int sizeElements = elements.size();
         Random random = new Random();
         int int_random = random.nextInt(sizeElements);
         elements.get(int_random).click();
+    }
+
+    public void iChooseTheSize(String chooseTheSize) {
+        chooseTheSize(chooseTheSize);
+    }
+
+    public void iChooseTheColorOfProduct(String color) {
+        chooseTheColor(color);
+    }
+
+    public void iAddToCart() {
+        iClickOnButton(String.valueOf(addToCartButton));
     }
 }
